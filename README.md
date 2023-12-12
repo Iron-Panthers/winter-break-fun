@@ -8,22 +8,26 @@ Want to brush up on basic Java skills over winter break! This is the repo for yo
 There are several assignments in [this Google Doc](https://docs.google.com/document/d/1NLcqq41JP_fEn9IeM-8WH5F5AcdkmE5eqUX8m_-3nhY/edit?usp=sharing)\
 Follow along with the lessons and instructions there in order to learn more about Java!
 ### Setup
-Clone this repo and branch off of main
-Navigate down to ```\lib\src\main\java\winterbreakstudying````
-Then, run a build (next section)
+Clone this repo and branch off of main\
+Then, navigate down to ```\lib\src\main\java``` and run a build (next section)
 
 ### Test\Build!
-Once you've determined which assigments you'd like to do, go write up some code in the corresponding files.
+Once you've determined which assignments you'd like to do, go write up some code in the corresponding files.
 You can then run a gradle test to see if your solutions are correct!
 <br/><br/>
-In order to run a test you have multiple options.
-You could either run this set of commands:
+In order to run a test (or a build) you have multiple options.<br/><br/>
+You could hit ```{ctrl} + {shift} + b + b```<br/><br/>
+or if that doesn't work, you could go the old-fashioned way and run<br/><br/>
 
 ```{ctrl} + {shift} + p ```\
 ```WPILib: Build Robot Code```\
 ```java```
 
-or (the faster way) ```{ctrl} + {shift} + b + b```
+```{ctrl} + {shift} + p ```\
+```WPILib: Build Robot Code```\
+```java```
+
+or (the faster way) 
 
 ### Spotless Errors?!
 Make sure to save your files with ```{ctrl} + s```\
