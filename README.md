@@ -19,6 +19,7 @@ In order to run a test (or a build) you have multiple options.<br/><br/>
 You could hit ```{ctrl} + {shift} + b + b```<br/><br/>
 or if that doesn't work, you could go the old-fashioned way and run<br/><br/>
 
+```
 {ctrl} + {shift} + p
 WPILib: Build Robot Code
 java
