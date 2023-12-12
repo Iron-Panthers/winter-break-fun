@@ -23,9 +23,11 @@ or if that doesn't work, you could go the old-fashioned way and run<br/><br/>
 ```WPILib: Build Robot Code```\
 ```java```
 
-```{ctrl} + {shift} + p ```\
-```WPILib: Build Robot Code```\
-```java```
+```
+{ctrl} + {shift} + p
+WPILib: Build Robot Code
+java
+```
 
 or (the faster way) 
 
