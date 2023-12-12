@@ -16,8 +16,8 @@ You can then run a gradle test to see if your solutions are correct!\
 \In order to run a test you have multiple options.
 You could either run this set of commands:
 
-```{ctrl} + {shift} + p ```
-```WPILib: Build Robot Code```
+```{ctrl} + {shift} + p ```\
+```WPILib: Build Robot Code```\
 ```java```
 
 or (the faster way) ```{ctrl} + {shift} + b + b```
