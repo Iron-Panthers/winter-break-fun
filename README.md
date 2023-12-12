@@ -19,17 +19,11 @@ In order to run a test (or a build) you have multiple options.<br/><br/>
 You could hit ```{ctrl} + {shift} + b + b```<br/><br/>
 or if that doesn't work, you could go the old-fashioned way and run<br/><br/>
 
-```{ctrl} + {shift} + p ```\
-```WPILib: Build Robot Code```\
-```java```
-
-```
 {ctrl} + {shift} + p
 WPILib: Build Robot Code
 java
 ```
-
-or (the faster way) 
+Don't touch the tests I've written, as that's not the point lol. However, you can write your own (add more tests) and use them to help debug your problems.
 
 ### Spotless Errors?!
 Make sure to save your files with ```{ctrl} + s```\
