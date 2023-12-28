@@ -27,6 +27,9 @@ dependencies {
 
 test{
     useJUnitPlatform()
+
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
+
     testLogging {
         showStandardStreams = true;
         exceptionFormat = 'full' // show expected and actual for failed tests
@@ -41,7 +44,6 @@ spotless {
         }
         toggleOffOn()
         googleJavaFormat()
-        removeUnusedImports()
         trimTrailingWhitespace()
         endWithNewline()
     }
@@ -82,4 +84,8 @@ spotless {
         indentWithSpaces(2)
         endWithNewline()
     }
+}
+// Configure string concat to always inline compile
+tasks.withType(JavaCompile) {
+    options.compilerArgs.add '-XDstringConcat=inline'
 }
