@@ -13,7 +13,9 @@ public class Food {
 
   // Create a multi arg constructor
 
-  public Food(String name, String prepTime, String[] ingredients, double rating) {}
+  public Food(String name, String prepTime, String[] ingredients, double rating) {
+    
+  }
 
   // Fill out these getters and setters for all of your instance vaiables
 

@@ -1,6 +1,8 @@
 package winterbreakstudying.ArrayPractice;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayPractice {
   public ArrayPractice() {}
@@ -18,16 +20,32 @@ public class ArrayPractice {
 
   public static void practice() {
     // Initialize me with these values: 3, 5, 10
-    int[] arr;
+    int[] arr = {3,5,10};
 
     // Print out each value in the array with a for loop
-
+    for(int i : arr){
+      System.out.println(i);
+    }
     // Change the value of 10 ==> 7
-
+    for(int i = 0; i < arr.length; i++){
+      if(arr[i] == 10){
+        arr[i] = 7;
+      }
+    }
     // Print out the length of the array
+    System.out.println("The length of the array ;)");
+    // try {
+    //   Thread.sleep(5000);
+    // } catch (InterruptedException e) {
+    //   // TODO Auto-generated catch block
+    //   e.printStackTrace();
+    // }
+    System.out.println("JK, its " + arr.length);
 
     // Multiply all the values in the array by 2 using a for loop
-
+    for(int i = 0; i < arr.length; i++){
+      arr[i] *= 2;
+    }
   }
 
   /**
@@ -40,15 +58,47 @@ public class ArrayPractice {
    * [7, 14, 21]
    */
   public static int[] findDivisibleBySeven(int[] sequence) {
-    int[] divisibleBySeven = new int[0];
+    int[] divisibleBySeven = new int[sequence.length];
 
+    for(int i = 0; i < sequence.length; i++){
+      //yoda case bc why not?
+      if(0 == sequence[i] % 7){
+        divisibleBySeven[i] = sequence[i];
+      }
+    }
     return divisibleBySeven;
   }
 
-  public static int[] findDivisibleBySevenNoZeros(int[] sequence) {
-    int[] divisibleBySeven = new int[0];
+  public static int[] findDivisibleBySevenNoZeros(int[] sequence) {//i tried to do it without arraylists :(
+    int[] divisibleBySevenWithZeros = new int[sequence.length];
 
-    return divisibleBySeven;
+    //sets all numbers to first in the list
+    int index = 0;
+    for(int i = 0; i < sequence.length; i++){
+      //yoda case bc why not?
+      if(0 == sequence[i] % 7){
+        divisibleBySevenWithZeros[index] = sequence[i];
+        index++;
+      }
+    }
+
+    /*find the size of the actual elements
+     * Usefull for when we want to allocate memory for our final trimmed up array
+    */
+    int arraySize = 0;
+    while(divisibleBySevenWithZeros[arraySize] != 0){
+      arraySize++;
+    }
+
+    //initialize our trimmed array
+    int[] divisibleBySevenNoZeros = new int[arraySize];
+
+    //set the values
+    for(int i = 0; i < divisibleBySevenNoZeros.length; i++){
+      divisibleBySevenNoZeros[i] = divisibleBySevenWithZeros[i];
+    }
+
+    return divisibleBySevenNoZeros;
   }
   // =================== Testing/Output methods below! ===================
 
@@ -70,7 +120,7 @@ public class ArrayPractice {
       95, 99, 44, 73, 38, 88, 6, 57, 16, 41
     };
 
-    int[] divisibleBySeven = findDivisibleBySeven(sequence);
+    int[] divisibleBySeven = findDivisibleBySevenNoZeros(sequence);//im just fancy like that
 
     System.out.println(Arrays.toString(divisibleBySeven));
   }

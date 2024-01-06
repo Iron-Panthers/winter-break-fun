@@ -10,11 +10,17 @@ public class Cookbook {
   // Create an private instance variable
   // It is an arrayList of all the foods this cookbook contains
 
+  private ArrayList<Food> foods;
+
   // Create a zero arg constructor
-  public Cookbook() {}
+  public Cookbook() {
+    foods = new ArrayList<Food>();
+  }
 
   // Create a multi arg constructor
-  public Cookbook(ArrayList<Food> foods) {}
+  public Cookbook(ArrayList<Food> foods) {
+    this.foods = foods;
+  }
 
   // Returns the arraylist of all the food
   public ArrayList<Food> getFoods() {
