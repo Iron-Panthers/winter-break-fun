@@ -18,16 +18,20 @@ public class ArrayPractice {
 
   public static void practice() {
     // Initialize me with these values: 3, 5, 10
-    int[] arr;
-
+    int[] arr = {3, 5, 10};
     // Print out each value in the array with a for loop
+    for (int i = 1; i < arr.length; i++) {
+      System.out.println(arr[i]);
+    }
 
     // Change the value of 10 ==> 7
-
+    arr[3] = 7;
     // Print out the length of the array
-
-    // Multiply all the values in the array by 2 using a for loop
-
+    System.out.println(arr.length);
+    // Multiply all the values in the array by 2 using a for  loop
+    for (int i = 1; i < arr.length; i++) {
+      arr[i] = arr[i] * 2;
+    }
   }
 
   /**
@@ -40,14 +44,22 @@ public class ArrayPractice {
    * [7, 14, 21]
    */
   public static int[] findDivisibleBySeven(int[] sequence) {
-    int[] divisibleBySeven = new int[0];
-
+    int[] divisibleBySeven = new int[sequence.length];
+    for (int i = 1; i <= divisibleBySeven.length; i++) {
+      if ((divisibleBySeven[i] % 7) != 0) {
+        divisibleBySeven[i] = 0;
+      }else{
+        divisibleBySeven[i] = sequence[i];
+      }
+    }
     return divisibleBySeven;
   }
 
   public static int[] findDivisibleBySevenNoZeros(int[] sequence) {
     int[] divisibleBySeven = new int[0];
-
+    for (int i = 1; i <= divisibleBySeven.length; i++) {
+      if ((divisibleBySeven[i] % 7) != 0) {}
+    }
     return divisibleBySeven;
   }
   // =================== Testing/Output methods below! ===================
