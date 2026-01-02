@@ -4,30 +4,49 @@
 package winterbreakstudying.Cookbook;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cookbook {
 
   // Create an private instance variable
   // It is an arrayList of all the foods this cookbook contains
-
+  private ArrayList<Food> foods = new ArrayList<>();
   // Create a zero arg constructor
-  public Cookbook() {}
+  public Cookbook() {
+    foods = new ArrayList<Food>(List.of(
+      new Food(),
+      new Food("fried rice", 0.5, new String[]{"rice", "veggies", "soy sauce", "eggs"}, 5.0),
+      new Food("steak", 1.0, new String[]{"salt", "butter", "steak", "herbs"}, 4.5)
+    ));
+  }
 
   // Create a multi arg constructor
-  public Cookbook(ArrayList<Food> foods) {}
+  public Cookbook(ArrayList<Food> foods) {
+    this.foods = foods;
+  }
 
   // Returns the arraylist of all the food
   public ArrayList<Food> getFoods() {
-    return new ArrayList<>();
+    return foods;
   }
 
   // Iterate through the array and print all the food names
-  public void printNamesOfAllDishes() {}
+  public void printNamesOfAllDishes() {
+    for (int i = 0; i < foods.size(); i++){
+      System.out.println(foods.get(i).getName());
+    }
+  }
 
   // Should find the highest rated dish and return it
   // If there are two dishes both most highly rated, then this method should return the first dish
   public Food findHighestRatedDish() {
-    return new Food();
+    Food highestRatedDish = foods.get(0);
+    for (int i = 0; i < foods.size(); i++){
+      if (foods.get(i).getRating() > highestRatedDish.getRating()){
+        highestRatedDish = foods.get(i);
+      }
+    }
+    return highestRatedDish;
   }
 
   /**
@@ -39,5 +58,11 @@ public class Cookbook {
    *
    * @param minRating - the minimum rating for the new cookbook
    */
-  public void purgeCookbook(double minRating) {}
+  public void purgeCookbook(double minRating) {
+    for (int i = 0; i < foods.size(); i++){
+      if (foods.get(i).getRating() < minRating){
+        foods.remove(i);
+      }
+    }
+  }
 }

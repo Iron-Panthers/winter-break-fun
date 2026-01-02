@@ -16,22 +16,22 @@ public class CookbookTest {
     ArrayList<Food> dishesList = new ArrayList<>();
 
     Food[] dishesArray = {
-      new Food("Pizza", "3 hours", (new String[] {"dough", "tomato sauce", "cheese"}), 4.5),
-      new Food("Pasta", "2 hours", (new String[] {"water", "flour", "alfredo sauce"}), 4.8),
-      new Food("Butter", "5 hours", (new String[] {"milk"}), 3.5),
+      new Food("Pizza", 3.0, (new String[] {"dough", "tomato sauce", "cheese"}), 4.5),
+      new Food("Pasta", 2.0, (new String[] {"water", "flour", "alfredo sauce"}), 4.8),
+      new Food("Butter", 5.0, (new String[] {"milk"}), 3.5),
       new Food(
           "Iron Panther Soup",
-          "1 build season",
+          1.0,
           (new String[] {"blood", "sweat", "tears", "metal shavings", "disappointment"}),
           5),
       new Food(
           "Turkey Sandwich",
-          "20 minutes",
+          0.3,
           (new String[] {"turkey", "mayonaise", "cheese", "white bread"}),
           4),
       new Food(
-          "Cake", "7.5 hours", (new String[] {"flour", "sugar", "eggs", "chocolate", "milk"}), 5),
-      new Food("Fried Liver", "9 hours", (new String[] {"liver", "oil", "garlic"}), 1.5)
+          "Cake", 7.5, (new String[] {"flour", "sugar", "eggs", "chocolate", "milk"}), 5),
+      new Food("Fried Liver", 9.0, (new String[] {"liver", "oil", "garlic"}), 1.5)
     };
 
     for (Food food : dishesArray) {

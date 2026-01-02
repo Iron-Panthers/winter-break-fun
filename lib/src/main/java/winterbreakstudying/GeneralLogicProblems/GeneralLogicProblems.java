@@ -7,8 +7,16 @@ public class GeneralLogicProblems {
    * sum is larger, false if it's they are equal or the second array sum is larger
    */
   public static boolean isFirstSumLarger(int[] arr1, int[] arr2) {
-
-    return false;
+    int sum1 = 0;
+    int sum2 = 0;
+    for (int i = 0; i < arr1.length; i++){
+      sum1 += arr1[i];
+    }
+    //dunno if theyre different lengths
+    for (int i = 0; i < arr2.length; i++){
+      sum2 += arr2[i];
+    }
+    return sum1 > sum2;
   }
 
   // Prints out a pyramid with asterisks based on the number of levels
@@ -24,8 +32,9 @@ public class GeneralLogicProblems {
   // and see if it's what you expect...
   // Importing a class and calling a static method should be relatively simple at this point
   public static void printPyramid(int levels) {
+    //spaces increment by -1 as we go down
+    //asterisks increment by 2 as we go down
 
-    System.out.println("Iron Panthers");
   }
 
   // Takes in a list of strings, returns the most frequent word (string)
