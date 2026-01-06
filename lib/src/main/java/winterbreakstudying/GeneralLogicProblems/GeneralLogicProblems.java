@@ -1,14 +1,28 @@
 package winterbreakstudying.GeneralLogicProblems;
+import java.util.HashMap;
 
 public class GeneralLogicProblems {
+  public static int sumOfArr1;
+  public static int sumOfArr2;
 
-  /**
-   * Should take two arrays and then find the sums of each array Returns true if the first array's
-   * sum is larger, false if it's they are equal or the second array sum is larger
-   */
-  public static boolean isFirstSumLarger(int[] arr1, int[] arr2) {
+    /**
+     * Should take two arrays and then find the sums of each array Returns true if the first array's        /
+     * sum is larger, false if it's they are equal or the second array sum is larger                      \/  
+     */                                                                      
+    public static boolean isFirstSumLarger(int[] arr1, int[] arr2) {
+      for (int i = 0; i < arr1.length; i++) {  //getting sum of arr1
+        sumOfArr1 = sumOfArr1 + arr1[i];
+      }
 
-    return false;
+      for (int i = 0; i < arr2.length; i++) {  //getting sum of arr2
+        sumOfArr2 = sumOfArr2 + arr1[i];
+      }
+
+      if (sumOfArr1 > sumOfArr2) {  //checking which array is larger
+        return true;
+      } else {
+        return false;
+      }
   }
 
   // Prints out a pyramid with asterisks based on the number of levels
@@ -24,13 +38,34 @@ public class GeneralLogicProblems {
   // and see if it's what you expect...
   // Importing a class and calling a static method should be relatively simple at this point
   public static void printPyramid(int levels) {
+    for (int rows = 1; rows < levels; rows++) {
+      
+      for (int spaces = 0; spaces < levels - rows; spaces++) {
+        System.out.print(" ");
+      }
+
+      for (int star = 0; star < 2 * rows - 1; star++) {
+        System.out.print("*");
+      }
+
+      System.out.println();
+    }
 
     System.out.println("Iron Panthers");
   }
 
   // Takes in a list of strings, returns the most frequent word (string)
   // Try using a hashmap!
-  public static String mostFrequent(String[] words) {
+  static HashMap<String, Integer> wordCount = new HashMap<>();
+  
+    public static String mostFrequent(String[] words) {
+      for (String word : words) {
+        if (wordCount.containsKey(word)) {
+          wordCount.put(word, wordCount.get(word)+1);
+        } else {
+          wordCount.put(word, 1);
+        }
+    }
     return "";
   }
 
@@ -47,6 +82,6 @@ public class GeneralLogicProblems {
    * @return The total amount of money would one have after all these years of interest
    */
   public static double interestCalculator(double deposit, int years, double interest) {
-    return 0;
+    return deposit * Math.pow((1 + (interest/100)), years);
   }
 }

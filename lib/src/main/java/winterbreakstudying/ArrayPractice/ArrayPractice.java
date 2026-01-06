@@ -18,16 +18,27 @@ public class ArrayPractice {
 
   public static void practice() {
     // Initialize me with these values: 3, 5, 10
-    int[] arr;
+
+      int[] arr = {3, 5, 10};
 
     // Print out each value in the array with a for loop
 
+      for (int i = 0; i < arr.length; i++) {
+        System.out.println(arr[i]);
+      }
+
     // Change the value of 10 ==> 7
 
+      arr[2] = 7;
+
     // Print out the length of the array
+    
+      System.out.println(arr.length);
 
     // Multiply all the values in the array by 2 using a for loop
-
+      for (int i = 0; i < arr.length; i++) {
+       arr[i] = arr[i] + arr[i];
+      }
   }
 
   /**
@@ -40,13 +51,33 @@ public class ArrayPractice {
    * [7, 14, 21]
    */
   public static int[] findDivisibleBySeven(int[] sequence) {
-    int[] divisibleBySeven = new int[0];
-
+    int[] divisibleBySeven = new int[sequence.length];
+    for (int i = 0; i < sequence.length; i++){
+      if (sequence[i] % 7 == 0){
+        divisibleBySeven[i] = sequence[i];
+      } else {
+        divisibleBySeven[i] = 0;
+      }
+    }
     return divisibleBySeven;
   }
 
   public static int[] findDivisibleBySevenNoZeros(int[] sequence) {
-    int[] divisibleBySeven = new int[0];
+    int values = 0;
+    for (int i = 0; i < sequence.length; i++){
+      if (sequence[i] % 7 == 0 && sequence[i] != 0){
+        values++;
+      }
+    }
+    int[] divisibleBySeven = new int[values];
+
+    int index = 0;
+
+    for (int i = 0; i < sequence.length; i++){
+      if (sequence[i] % 7 == 0 && sequence[i] != 0){
+        divisibleBySeven[index++] = sequence[i];
+      }
+    }
 
     return divisibleBySeven;
   }
@@ -70,7 +101,7 @@ public class ArrayPractice {
       95, 99, 44, 73, 38, 88, 6, 57, 16, 41
     };
 
-    int[] divisibleBySeven = findDivisibleBySeven(sequence);
+    int[] divisibleBySeven = findDivisibleBySevenNoZeros(sequence);
 
     System.out.println(Arrays.toString(divisibleBySeven));
   }

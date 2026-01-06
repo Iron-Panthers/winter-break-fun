@@ -9,25 +9,46 @@ public class Cookbook {
 
   // Create an private instance variable
   // It is an arrayList of all the foods this cookbook contains
+  private ArrayList<Food> foodIndex = new ArrayList<Food>();
 
   // Create a zero arg constructor
-  public Cookbook() {}
+  public Cookbook() {
+    foodIndex = new ArrayList<>();
+  }
 
   // Create a multi arg constructor
-  public Cookbook(ArrayList<Food> foods) {}
+  public Cookbook(ArrayList<Food> foods) {
+    foodIndex = foods;
+  }
 
   // Returns the arraylist of all the food
   public ArrayList<Food> getFoods() {
-    return new ArrayList<>();
+    return foodIndex;
   }
 
   // Iterate through the array and print all the food names
-  public void printNamesOfAllDishes() {}
+  public void printNamesOfAllDishes() {
+    for (int i = 0; i < foodIndex.size(); i++) {
+      System.out.println(foodIndex.get(i).getName());
+    }
+  }
 
   // Should find the highest rated dish and return it
   // If there are two dishes both most highly rated, then this method should return the first dish
   public Food findHighestRatedDish() {
-    return new Food();
+    double highestRating = 0;
+    for (int i = 0; i < foodIndex.size(); i++) {
+      if (foodIndex.get(i).getRating() > highestRating) {
+        highestRating = foodIndex.get(i).getRating();
+      }
+    }
+
+    for (int i = 0; i < foodIndex.size(); i++) {
+      if (foodIndex.get(i).getRating() == highestRating) {
+        return foodIndex.get(i);
+      }
+    }
+    return null;
   }
 
   /**
@@ -39,5 +60,11 @@ public class Cookbook {
    *
    * @param minRating - the minimum rating for the new cookbook
    */
-  public void purgeCookbook(double minRating) {}
+  public void purgeCookbook(double minRating) {
+    for (int i = 0; i < foodIndex.size(); i++) {
+      if (foodIndex.get(i).getRating() < minRating) {
+        foodIndex.remove(foodIndex.get(i));
+      }
+    }
+  }
 }
