@@ -1,4 +1,5 @@
 package winterbreakstudying.GeneralLogicProblems;
+import java.util.HashMap;
 
 public class GeneralLogicProblems {
 
@@ -34,13 +35,37 @@ public class GeneralLogicProblems {
   public static void printPyramid(int levels) {
     //spaces increment by -1 as we go down
     //asterisks increment by 2 as we go down
-
+    for (int level = 0; level < levels; level++){
+      for (int space = 0; space < levels - level - 1; space++){
+        System.out.print(" ");
+      }
+      for (int star = 0; star < (level * 2) + 1; star++){
+        System.out.print("*");
+      }
+      System.out.println();
+    }
   }
 
   // Takes in a list of strings, returns the most frequent word (string)
   // Try using a hashmap!
   public static String mostFrequent(String[] words) {
-    return "";
+    HashMap<String, Integer> wordList = new HashMap<>();
+    for (String word : words){
+      if (wordList.containsKey(word)){
+        wordList.put(word, wordList.get(word) + 1);
+      } else{
+        wordList.put(word, 1);
+      }
+    }
+    String mostFrequent = "";
+    int maxCount = 0;
+    for (String word : wordList.keySet()){
+      if (wordList.get(word) > maxCount) {
+        maxCount = wordList.get(word);
+        mostFrequent = word;
+      }
+    }
+    return mostFrequent;
   }
 
   /**
@@ -56,6 +81,6 @@ public class GeneralLogicProblems {
    * @return The total amount of money would one have after all these years of interest
    */
   public static double interestCalculator(double deposit, int years, double interest) {
-    return 0;
+    return deposit * Math.pow((1 + (interest * 0.01)), years);
   }
 }
